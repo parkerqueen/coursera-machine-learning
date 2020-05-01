@@ -27,11 +27,11 @@
 * The output function of a Supervised ML Algorithm is denoted by `h` (hypothesis)
 * $h_\theta(x)=\theta_0+\theta_1x$
 * The thetas here are called 'parameters'
-* Linear regression with one variable/feature = univariate regression
+* The above mentioned hypothesis is actually a hypothesis of univariate linear regression with one feature $x$
 
 ## Section 5
-* For linear regression, the most commonly used cost function is the squared error cost function
-$$J(\theta_0,\theta_1)=\frac{1}{2m}\times\sum_{i=1}^{m}(h(x_i)-y(x_i))^2$$
+* For linear regression, the most commonly used cost function is the squared error cost function. For univariate linear regression
+$$J(\theta_0,\theta_1)=\frac{1}{2m}\times\sum_{i=1}^{m}(h(x^i)-y(x^i))^2$$
 * The mean is being halved (note: we divide by $\frac{1}{2m}$) to aid in computation (when we calculate derivative)
 * Our goal is to find the theta values when the cost function is minimum
 
@@ -39,17 +39,17 @@ $$J(\theta_0,\theta_1)=\frac{1}{2m}\times\sum_{i=1}^{m}(h(x_i)-y(x_i))^2$$
 * Gradient descent is an algorithm used to find the local minimum of some arbitrary function `J`
 * For a function `J` of two variables $\theta_0$ & $\theta_1$, the gradient descent algorithm is:
   * Repeat until convergence for each variable of `J`
-$$\theta_i=\theta_i-\alpha\times\frac{\partial}{\partial \theta_i}(J(\theta_0,\theta_1))$$
+$$\theta_j=\theta_j-\alpha\times\frac{\partial}{\partial \theta_j}(J(\theta_0,\theta_1))$$
   * Note that we perform simultaneous updates
-  * The $\alpha$ is called the learning rate and it control how big a step do we table towards the local minimum
+  * The $\alpha$ is called the learning rate and it controls how big a step do we table towards the local minimum
   * If $\alpha$ is too small, it may take a long time to achieve convergence
   * If $\alpha$ is too big, the algorithm may overshoot the local minima and is likely to fail to converge
   * A good thing is that we do not have to reduce the value of $\alpha$ as we approach the local minima to ensure convergence. This is because we're multiplying the learning rate with the slope (slope automatically decreases as we approach the local minima). Hence the algorithm will automatically take smaller and smaller steps as we approach the minimum
 
 ## Section 7
 * The squared error cost function is a convex function i.e. the only local minima is also the global minima
-* To perform gradient descent on the squared error cost function, the gradient descent rule translates to
+* To perform gradient descent on the squared error cost function above, the gradient descent rule translates to
   * Repeat until convergence for $\theta_0$ & $\theta_1$
-$$\theta_0=\theta_0-\alpha\times\frac{1}{m}\times\sum_{i=1}^{m}(h(x_i)-y(x_i))$$
-$$\theta_1=\theta_1-\alpha\times\frac{1}{m}\times\sum_{i=1}^{m}((h(x_i)-y(x_i))\times x_i)$$
+$$\theta_0=\theta_0-\alpha\times\frac{1}{m}\times\sum_{i=1}^{m}(h(x^i)-y(x^i))$$
+$$\theta_1=\theta_1-\alpha\times\frac{1}{m}\times\sum_{i=1}^{m}((h(x^i)-y(x^i))\times x^i)$$
 * Since we're looking at the entire training set at every step of the gradient descent, we call it the batch gradient descent

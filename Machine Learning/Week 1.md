@@ -25,9 +25,9 @@
 
 ## Section 4
 * The output function of a Supervised ML Algorithm is denoted by `h` (hypothesis)
-* $h_\theta(x)=\theta_0+\theta_1x$
+* For a univariate linear regression with one feature $x$
+$$h(x)=\theta_0+\theta_1x$$
 * The thetas here are called 'parameters'
-* The above mentioned hypothesis is actually a hypothesis of univariate linear regression with one feature $x$
 
 ## Section 5
 * For linear regression, the most commonly used cost function is the squared error cost function. For univariate linear regression
@@ -37,7 +37,7 @@ $$J(\theta_0,\theta_1)=\frac{1}{2m}\times\sum_{i=1}^{m}(h(x^i)-y(x^i))^2$$
 
 ## Section 6
 * Gradient descent is an algorithm used to find the local minimum of some arbitrary function `J`
-* For a function `J` of two variables $\theta_0$ & $\theta_1$, the gradient descent algorithm is:
+* For a function `J` of two variables $\theta_0$ & $\theta_1$, the gradient descent algorithm is
   * Repeat until convergence for each variable of `J`
 $$\theta_j=\theta_j-\alpha\times\frac{\partial}{\partial \theta_j}(J(\theta_0,\theta_1))$$
   * Note that we perform simultaneous updates
@@ -48,7 +48,7 @@ $$\theta_j=\theta_j-\alpha\times\frac{\partial}{\partial \theta_j}(J(\theta_0,\t
 
 ## Section 7
 * The squared error cost function is a convex function i.e. the only local minima is also the global minima
-* To perform gradient descent on the squared error cost function above, the gradient descent rule translates to
+* To perform gradient descent on the squared error cost function discussed in Section 5, the gradient descent rule translates to
   * Repeat until convergence for $\theta_0$ & $\theta_1$
 $$\theta_0=\theta_0-\alpha\times\frac{1}{m}\times\sum_{i=1}^{m}(h(x^i)-y(x^i))$$
 $$\theta_1=\theta_1-\alpha\times\frac{1}{m}\times\sum_{i=1}^{m}((h(x^i)-y(x^i))\times x^i)$$

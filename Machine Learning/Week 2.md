@@ -2,7 +2,7 @@
 
 ## Section 1
 * For multivariate linear regression, the hypothesis becomes
-$$h_\theta(x_1,x_2,x_3,\cdots,x_n)=\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_3+\cdots+\theta_nx_n$$
+$$h(x_1,x_2,x_3,\cdots,x_n)=\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_3+\cdots+\theta_nx_n$$
 * It's better to introduce new notations. Consider the following
 $$x=
 \begin{bmatrix}
@@ -31,7 +31,7 @@ $$h(x)=\theta^Tx$$
 * The squared error cost function for multivariate linear regression
 $$J(\theta)=\frac{1}{2m}\times\sum_{i=1}^m(h(x^i)-y(x^i))^2$$
 * The gradient descent algorithm for multivariate linear regression
-  * Repeat until convergence for each $\theta_i$ of the vector $\theta$
+  * Repeat until convergence for each $\theta_j$ of the vector $\theta$
 $$\theta_j=\theta_j-\alpha\times\frac{\partial}{\partial\theta_j}(J(\theta))$$
 $$\theta_j=\theta_j-\alpha\times\frac{1}{m}\times\sum_{i=1}^m((h(x^i)-y(x^i))\times x_j^i)$$
 

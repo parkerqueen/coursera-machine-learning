@@ -57,8 +57,7 @@ $$h(x)=\theta_0+\theta_1x_1+\theta_2(x_2)^2$$
 
 ## Section 6
 * A proper analytical alternative to Gradient Descent is the Normal Equation method
-* The intuition behind it is that you can partial derivate the cost function $J(\theta)$ on each $\theta_j$ and set that derivative equal to zero and solve for $\theta_j$
-* Mathematically, the above can be done by the following formula ($X$ is called the design matrix)
+* Mathematically, the following formula denotes the Normal Equation Method ($X$ is called the design matrix)
 $$minarg(J(\theta))=(X^TX)^{-1}X^Ty$$
 $$X=
 \begin{bmatrix}
@@ -79,6 +78,9 @@ y=
 $$
 * Here, $X$ is a $m\times(n+1)$ matrix while $y$ is a m-dimensional vector
 * Turns out that calculating inverses of bigger matrices is very costly (For an nxn matrix: $O(n^3)$). A general heuristic is to use the normal equation method if your number of features are 1000 or sometimes maybe even 10000
+* The reasons we might want to use gradient descent over all the other closed form solutions for minimizing the cost function are
+  * There are no closed form solutions (as is the case with many non-linear functions).
+  * The computation just isn't feasible (in terms of storage as well as time).
 
 ## Section 7
 * The $(X^TX)$ matrix above might at times be non-invertible

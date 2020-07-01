@@ -11,14 +11,13 @@
 * Consequently, the neural network is seen as a giant hypothesis that takes in a set of activations and outputs another set and the weights in the NN become the parameters of our hypothesis.
 
 ## Section 3
-* $a_j^k$ represents the activation of the $jth$ neuron in the $kth$ layer. $a^k$ represents the vector of activations of the $kth$ layer.
-* $\theta^k$ is an $m\times n$ matrix where $m$ denotes the number of neurons in the $(k+1)th$ layer while $n$ denotes the number of neurons in the $kth$ layer. $\theta^k$ denotes the matrix of weights controlling function mapping from $k$ to $k+1$.
+* For notation, assume that $L$ denotes the total number of layers in our network and $s_l$ denotes the number of neurons in $lth$ layer (not counting the bias unit). Also note that $s_L=K$.
+* $z_j^l$ represents the value which when input into the activation function will generate the activation of the $jth$ neuron in the $lth$ layer. Hence, it does not contain any value for the bias unit's activation.
+* $a_j^l$ represents the activation of the $jth$ neuron in the $lth$ layer including the bias unit. $a^l$ represents the vector of activations of the $lth$ layer.
+* $\theta^l$ is an $m\times n$ matrix where $m$ denotes the number of neurons in the $(l+1)th$ layer while $n$ denotes the number of neurons in the $lth$ layer. $\theta^l$ denotes the matrix of weights controlling function mapping from $l$ to $l+1$.
 
 ## Section 4
 * Forward propagation is the procedure of computing activations of each neuron of a layer based on the activations of the neurons of the previous layer and continuing this process till the output layer.
 * For forward propagation, one may use the following vectorized formula to calculate the activation vector of a layer.
-$$a^k=g(\theta^{k-1}a^{k-1})$$
+$$a^l=g(\theta^{l-1}a^{l-1})$$
 * $g$ can be a function such as the logistic function.
-
-## Section 5
-* 
